@@ -1,0 +1,40 @@
+{
+  "name": "the-app",
+  "version": "1.0.0",
+  "description": "Demoing GCP services",
+  "main": "app.js",
+  "private": true,
+  "license": "Apache-2.0",
+  "author": "fillipo",
+  "repository": {
+    "type": "git",
+    "url": " "
+  },
+  "engines": {
+    "node": ">=4.3.2"
+  },
+  "scripts": {
+    "deploy": "gcloud app deploy",
+    "start": "node app.js",
+    "lint": "repo-tools lint",
+    "pretest": "npm run lint",
+    "system-test": "repo-tools test app",
+    "test": "npm run system-test",
+    "e2e-test": "repo-tools test deploy"
+  },
+  "dependencies": {
+    "express": "4.16.2"
+  },
+  "devDependencies": {
+    "@google-cloud/nodejs-repo-tools": "2.2.1"
+  },
+  "cloud-repo-tools": {
+    "test": {
+      "app": {
+        "msg": "Hello, world!"
+      }
+    },
+    "requiresKeyFile": true,
+    "requiresProjectId": true
+  }
+}
